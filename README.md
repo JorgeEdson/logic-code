@@ -1,2 +1,2 @@
-# logic-code
-A project that reviews basic programming concepts
+# LogicCode
+This project made in WPF shows examples of solving basic algorithms to exercise the programming logic
