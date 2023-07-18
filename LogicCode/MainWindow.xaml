@@ -1,0 +1,41 @@
+﻿<Window x:Class="LogicCode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogicCode"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>                
+                <ColumnDefinition Width="*"/>                
+            </Grid.ColumnDefinitions>            
+            <Grid >
+                <TreeView x:Name="Menu"                          
+                          SelectedItemChanged="Menu_SelectedItemChanged">
+                    <TreeViewItem Header="1 - Sequentials">
+                        <TreeViewItem Header="Change Value" Tag="SequentialEx01"/>
+                        <TreeViewItem Header="Show the Predecessor" Tag="SequentialEx02"/>
+                        <TreeViewItem Header="Converter Meters in Centimeters" Tag="SequentialEx03"/>
+                        <TreeViewItem Header="Calculating Rectangle Area" Tag="SequentialEx04"/>
+                        <TreeViewItem Header="Convert Age To Days" Tag="SequentialEx05"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="2 - Conditionals">
+                        
+                    </TreeViewItem>
+                    <TreeViewItem Header="3 - Repetition">
+                        
+                    </TreeViewItem>
+                    <TreeViewItem Header="4 - Object Orientation">
+                        
+                    </TreeViewItem>
+                </TreeView>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Frame x:Name="MainContent"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
