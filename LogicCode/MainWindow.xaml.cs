@@ -49,6 +49,9 @@ namespace LogicCode
                     case "SequentialEx05":
                         MainContent.Navigate(new ConvertAgeToDaysPage());
                         break;
+                    case "SequentialEx06":
+                        MainContent.Navigate(new TwiceAreaSquarePage());
+                        break;
                     default:
                         MainContent.Content = string.Empty;
                         break;

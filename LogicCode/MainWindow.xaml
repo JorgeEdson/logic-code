@@ -21,6 +21,7 @@
                         <TreeViewItem Header="Converter Meters in Centimeters" Tag="SequentialEx03"/>
                         <TreeViewItem Header="Calculating Rectangle Area" Tag="SequentialEx04"/>
                         <TreeViewItem Header="Convert Age To Days" Tag="SequentialEx05"/>
+                        <TreeViewItem Header="Twice area of Square" Tag="SequentialEx06"/>
                     </TreeViewItem>
                     <TreeViewItem Header="2 - Conditionals">
                         
