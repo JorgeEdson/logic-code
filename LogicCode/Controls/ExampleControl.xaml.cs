@@ -26,32 +26,35 @@ namespace LogicCode.Controls
             DataContext = this;
         }
 
+        #region TitleExample Property
         public static readonly DependencyProperty TitleExampleProperty =
-            DependencyProperty.Register("titleExample", typeof(object), typeof(ExampleControl), new PropertyMetadata(null));
-
-        public object TitleExample
+            DependencyProperty.Register("titleExample", typeof(UIElement), typeof(ExampleControl), new PropertyMetadata(null, TitleExampleOnComponentChanged));
+        public UIElement TitleExample
         {
-            get { return GetValue(TitleExampleProperty); }
+            get { return (UIElement)GetValue(TitleExampleProperty); }
             set { SetValue(TitleExampleProperty, value); }
         }
+        #endregion
 
+        #region DescriptionExample Property
         public static readonly DependencyProperty DescriptionExampleProperty =
-            DependencyProperty.Register("descriptionExample", typeof(object), typeof(ExampleControl), new PropertyMetadata(null));
-
-        public object DescriptionExample
+            DependencyProperty.Register("descriptionExample", typeof(UIElement), typeof(ExampleControl), new PropertyMetadata(null, DescriptionExampleOnComponentChanged));
+        public UIElement DescriptionExample
         {
-            get { return GetValue(DescriptionExampleProperty); }
+            get { return (UIElement)GetValue(DescriptionExampleProperty); }
             set { SetValue(DescriptionExampleProperty, value); }
         }
+        #endregion
 
+        #region InputsExample Property
         public static readonly DependencyProperty InputsExampleProperty =
-            DependencyProperty.Register("inputsExample", typeof(object), typeof(ExampleControl), new PropertyMetadata(null));
-
-        public object InputsExample
+            DependencyProperty.Register("inputsExample", typeof(UIElement), typeof(ExampleControl), new PropertyMetadata(null, InputsExampleOnComponentChanged));
+        public UIElement InputsExample
         {
-            get { return GetValue(InputsExampleProperty); }
+            get { return (UIElement)GetValue(InputsExampleProperty); }
             set { SetValue(InputsExampleProperty, value); }
         }
+        #endregion
 
         public TextBlock TextBlockOutput
         {
@@ -61,6 +64,36 @@ namespace LogicCode.Controls
         public TextBlock TextBlockCode
         {
             get { return textBlockCode; }
+        }
+
+        private static void TitleExampleOnComponentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var userControl = d as ExampleControl;
+            if (userControl != null)
+            {   
+                userControl.titleExample.Child = null;
+                userControl.titleExample.Child = e.NewValue as UIElement;
+            }
+        }
+
+        private static void DescriptionExampleOnComponentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var userControl = d as ExampleControl;
+            if (userControl != null)
+            {
+                userControl.descriptionExample.Child = null;
+                userControl.descriptionExample.Child = e.NewValue as UIElement;
+            }
+        }
+
+        private static void InputsExampleOnComponentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var userControl = d as ExampleControl;
+            if (userControl != null)
+            {
+                userControl.inputsExample.Children.Clear();
+                userControl.inputsExample.Children.Add(e.NewValue as UIElement);
+            }
         }
     }
 }

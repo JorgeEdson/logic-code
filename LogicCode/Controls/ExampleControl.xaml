@@ -22,18 +22,13 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <StackPanel>
-                <ContentControl x:Name="titleExample">
-                    
-                </ContentControl>
-            </StackPanel>
+            <Border x:Name="titleExample"/>
 
-            <StackPanel>
-                <ContentControl x:Name="descriptionExample"></ContentControl>
-            </StackPanel>
-
-            <StackPanel>
-                <ContentControl x:Name="inputsExample"></ContentControl>
+            <Border x:Name="descriptionExample"
+                    Grid.Row="1"/>
+            
+            <StackPanel x:Name="inputsExample"
+                        Grid.Row="2">                
             </StackPanel>
         </Grid>
 
